@@ -1,0 +1,11 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0a0b1d, #131733);
+  font-family: 'Arial', sans-serif;
+  z-index: 2;
+}

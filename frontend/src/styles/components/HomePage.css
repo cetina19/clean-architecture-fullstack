@@ -1,0 +1,463 @@
+
+@media (max-width: 320px) {
+  .parameter-table {
+    width: 100%;
+  }
+
+  .parameter-table tr {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+    background-color: #1e1f28;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ffffff;
+  }
+  .parameter-table thead {
+    display: none;
+  }
+
+  .parameter-table td {
+    display: block;
+    padding: 8px 0;
+    text-align: left;
+    border-bottom: 1px solid #2a2e3d;
+    font-size: 5vw;
+  }
+
+  .parameter-table td:last-child {
+    border-bottom: none;
+  }
+
+   .parameter-table td::before {
+    content: attr(data-label) ": ";
+    display: inline-block;
+    font-weight: bold;
+    color: #f5f7fa;
+    margin-right: 1vw;
+    font-size: 5vw;
+  }
+  
+  .parameter-table td:nth-child(1)::before {
+    content: 'Parameter Key: ';
+    display: inline-block;
+    font-weight: bold;
+    color: #f5f7fa;
+    margin-right: 1vw;
+    font-size: 5vw;
+  }
+
+  .parameter-table td:nth-child(2)::before {
+    content: 'Value: ';
+    display: inline-block;
+    font-weight: bold;
+    color: #f5f7fa;
+    margin-right: 1vw;
+    font-size: 5vw;
+  }
+
+  .parameter-table td:nth-child(3)::before {
+    content: 'Description: ';
+    display: inline-block;
+    font-weight: bold;
+    color: #f5f7fa;
+    margin-right: 1vw;
+    font-size: 5vw;
+  }
+
+  .parameter-table td:nth-child(4)::before {
+    content: 'Create Date: ';
+    display: inline-block;
+    font-weight: bold;
+    color: #f5f7fa;
+    margin-right: 1vw;
+    font-size: 5vw;
+  }
+
+  .parameter-table td:nth-child(5)::before {
+    content: '';
+  }
+
+  .parameter-table td input[type="text"] {
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 5px;
+  }
+
+  .parameter-table td:last-child::before {
+    content: "";
+  }
+
+  .parameter-table tr:last-child td[colspan="2"]::before {
+    content: "Description: ";
+    display: inline-block;
+    font-weight: bold;
+    color: #f5f7fa;
+    font-size: 4vw;
+  }
+
+  .parameter-table tr:last-child td[colspan="2"] {
+    display: block;
+    text-align: left;
+    border-bottom: 1px solid #2a2e3d;
+    width: 100%;
+    margin-right: 6vw;
+    align-self: center;
+  }
+
+  .parameter-table tr:last-child td:last-child {
+    display: block;
+    padding: 8px 0;
+    text-align: left;
+  }
+
+  .parameter-table tr:last-child td:last-child::before {
+    content: "";
+  }
+  
+
+  .parameter-table td .btn-edit,
+  .parameter-table td .btn-delete {
+    margin: 1vh 1vw;
+    padding: 10px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+
+  .parameter-table td .btn-delete::after {
+    content: 'Del';
+  }
+
+  .parameter-table td .btn-delete {
+    position: relative;
+    text-indent: -9999px;
+    background-color: #e74c3c;
+  }
+
+  .parameter-table td .btn-delete::after {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-indent: 0;
+  }
+
+  .btn-save,
+  .btn-cancel {
+    width: 30%;
+    padding: 10px 0;
+  }
+
+  .btn-edit {
+    width: 100%;
+  }
+  .btn-cancel{
+    color: #e74c3c
+  }
+
+  .parameter-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .btn-save,
+  .btn-cancel {
+    margin: 0;
+    flex: 0 0 48%;
+  }
+}
+
+.parameter-table .btn-edit,
+.parameter-table .btn-delete {
+  border: 1px solid transparent;
+  color: white;
+}
+
+.parameter-table .btn-delete:hover {
+  border-color: #f44336;
+}
+
+.parameter-table .btn-edit:hover,
+.parameter-table .btn-delete:hover {
+  opacity: 0.9;
+}
+
+.parameter-table td {
+  border-bottom: 1px solid #2a2e3d;
+}
+
+.parameter-table td:last-child {
+  border-bottom: none;
+}
+
+.parameter-table td:last-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+    background: linear-gradient(135deg, #0a0b1d, #131733);
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+}
+h1 {
+  text-align: center;
+  color: #fff;
+}
+
+.logo-container {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: -1;
+}
+
+.logo-icon {
+  width: 50px;
+  height: 50px;
+}
+
+.profile-menu {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+
+.profile-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dropdown-arrow {
+  font-size: 18px;
+  color: white;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-color: #1e1f28;
+  border-radius: 4px;
+  width: 150px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.dropdown-menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-menu ul li {
+  padding: 12px 16px;
+  cursor: pointer;
+  color: white;
+}
+
+.dropdown-menu ul li:hover {
+  background-color: #2a2e3d;
+}
+
+.table-container {
+  max-height: 70vh;
+  overflow-y: auto; 
+  overflow-x: hidden;
+}
+
+.table-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.table-container::-webkit-scrollbar-track {
+  background-color: #1e1f28;
+  height: 100%;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background-color: #50566f;
+  border-radius: 4px;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+  background-color: #708299;
+}
+
+.parameter-table {
+  background-color: #1e1f28;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0px;
+  overflow-x: auto;
+  cursor: text;
+}
+
+.parameter-table th,
+.parameter-table td {
+  padding: 15px;
+  text-align: left;
+  border: none;
+}
+
+.parameter-table th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  color: #708299;
+  background-color: #1e1f28;
+  font-weight: bold;
+}
+
+.parameter-table td {
+  background-color: #1e1f28;
+  color: #d0d0d3;
+}
+
+.parameter-table .btn-edit,
+.parameter-table .btn-delete,
+.parameter-table .btn-add {
+  margin: 0 5px;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  display: inline-block;
+}
+
+.btn-edit,
+.btn-delete,
+.btn-add {
+  margin: 0 5px;
+}
+
+.parameter-table .btn-edit {
+  background-color: #3178C6;
+  color: white;
+}
+
+.parameter-table .btn-delete {
+  background-color: #f44336;
+  color: white;
+}
+
+.parameter-table .btn-add {
+  background-color: #00BCD4;
+  color: white;
+  margin: 0 5px;
+}
+
+.parameter-table .btn-common {
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  padding: 8px 15px;
+  margin: 0 5px;
+}
+
+.parameter-table .btn-common:hover {
+  opacity: 0.8;
+}
+
+.parameter-table .btn-save {
+  background-color: #3178C6;
+}
+
+.parameter-table .btn-cancel {
+  background-color: #f44336;
+}
+
+.parameter-table .btn-add:hover,
+.parameter-table .btn-edit:hover,
+.parameter-table .btn-delete:hover {
+  opacity: 0.8;
+}
+
+.parameter-table input[type="text"] {
+  padding: 8px;
+  width: 90%;
+  box-sizing: border-box;
+  border: 1px solid #3a3f5a;
+  border-radius: 4px;
+  background-color: #252836;
+  color: #ffffff;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.parameter-table tbody tr:last-child input[type="text"] {
+  width: 90%;
+  box-sizing: border-box;
+}
+
+.parameter-table input[type="text"]::placeholder {
+  color: #848e9c;
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #50566f;
+  border-radius: 10px;
+}
+
+.user-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #fff;
+}
+
+.parameter-table tbody tr:last-child td:nth-last-child(2) {
+  display: none;
+}
+
+.parameter-table tbody tr:last-child td {
+  padding: 0;
+  margin: 0;
+}
+
+.parameter-table tbody tr:last-child td:last-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 0;
+}
+
+.arrow-down::after, .arrow-up::after {
+  content: "↓"; 
+  font-size: 2vw;
+  margin-left: 5px;
+  color: #b0c0de; 
+}
+
+.arrow-up::after {
+  content: "↑";
+}
+
+.parameter-table tbody tr:last-child td[colspan="2"] {
+  padding-left: 15px;
+}
+
+.parameter-table tbody tr:last-child input[type="text"] {
+  width: 100%;
+  box-sizing: border-box;
+}
